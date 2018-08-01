@@ -1,3 +1,7 @@
+# Developing process
+
+run `npm run dev:build` and in another terminal run `node .`, then change `app.js` and build your react app. when you wanna test your app just open `http://localhost:5001`.
+
 # Entry path
 
 entry path is `src/app.js`. if you want to change it, change inside `package.json` file.
@@ -19,6 +23,6 @@ if you want some files like images to being serve statically, just put them in `
 
 if you want to add something in your html file just change `server/index.html`.
 
-# Developing process
+# Using css frameworks
 
-run `npm run dev:build` and in another terminal run `node .`, then change `app.js` and build your react app. when you wanna test your app just open `http://localhost:5001`.
+if you want add less or scss to your product you must add it manually.
