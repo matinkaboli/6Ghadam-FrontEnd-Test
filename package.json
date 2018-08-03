@@ -38,5 +38,12 @@
     "uglifyjs-webpack-plugin": "^1.2.7",
     "url-loader": "^1.0.1",
     "webpack": "^4.16.3"
+  },
+  "dependencies": {
+    "@material-ui/core": "^1.4.2",
+    "@material-ui/icons": "^2.0.0",
+    "jss": "^9.8.7",
+    "jss-rtl": "^0.2.3",
+    "react-jss": "^8.6.1"
   }
 }
