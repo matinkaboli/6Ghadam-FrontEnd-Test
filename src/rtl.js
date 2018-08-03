@@ -21,6 +21,20 @@ const jss = create({
 
 const theme = createMuiTheme({
   direction: 'rtl',
+
+  palette: {
+    primary: {
+      main: '#2c333f',
+      contrastText: 'white',
+    },
+    secondary: {
+      main: '#109bfc',
+      contrastText: 'white',
+    },
+    background: {
+      default: '#f6f7fb',
+    }
+  },
 });
 
 const generateClassName = createGenerateClassName();
