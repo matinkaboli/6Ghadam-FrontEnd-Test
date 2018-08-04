@@ -11,6 +11,7 @@ const styles = theme => ({
     color: 'white',
     backgroundColor: green[500],
   },
+  toolbar: theme.mixins.toolbar,
 });
 
 class Appbar extends Component {

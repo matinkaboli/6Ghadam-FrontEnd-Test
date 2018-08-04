@@ -3,6 +3,7 @@ import { create } from 'jss';
 import React, { Component } from 'react';
 import JssProvider from 'react-jss/lib/JssProvider';
 import CssBaseLine from '@material-ui/core/CssBaseline';
+import { BrowserRouter as Router } from 'react-router-dom';
 import {
   jssPreset,
   createMuiTheme,
@@ -50,15 +51,17 @@ function RTL(props) {
 export default class extends Component {
   render() {
     return (
-      <div dir='rtl'>
-        <RTL>
-          <MuiThemeProvider theme={theme}>
-            <CssBaseLine>
-              <Components />
-            </CssBaseLine>
-          </MuiThemeProvider>
-        </RTL>
-      </div>
+      <Router>
+        <div dir='rtl'>
+          <RTL>
+            <MuiThemeProvider theme={theme}>
+              <CssBaseLine>
+                <Components />
+              </CssBaseLine>
+            </MuiThemeProvider>
+          </RTL>
+        </div>
+      </Router>
     );
   }
 }
