@@ -1,15 +1,17 @@
+import React, { Component } from 'react';
 import List from '@material-ui/core/List';
 import Menu from '@material-ui/core/Menu';
 import { NavLink } from 'react-router-dom';
 import Drawer from '@material-ui/core/Drawer';
 import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
 import HomeIcon from '@material-ui/icons/Home';
 import Divider from '@material-ui/core/Divider';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import ListItemText from '@material-ui/core/ListItemText';
+import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
 
 const styles = theme => ({
   list: {
@@ -22,6 +24,10 @@ const styles = theme => ({
   },
   icon: {
     marginLeft: 5,
+  },
+  link: {
+    textDecoration: 'none',
+    color: theme.palette.common.black,
   },
   avatar: {
     margin: 20,
@@ -38,13 +44,14 @@ const styles = theme => ({
     marginLeft: 15,
     fontWeight: 600,
   },
+  arrowDown: {
+    marginTop: 40,
+    marginLeft: 10,
+    cursor: 'pointer',
+  },
   drawerPaper: {
     width: 300,
     position: 'relative',
-  },
-  link: {
-    textDecoration: 'none',
-    color: theme.palette.common.black,
   },
 });
 
@@ -65,6 +72,18 @@ function Link(props) {
 const CustomLink = withStyles(styles)(Link);
 
 class Section extends Component {
+  state = {
+    anchorEl: null,
+  };
+
+  openMenu = e => {
+    this.setState({ anchorEl: e.currentTarget });
+  };
+
+  closeMenu = () => {
+    this.setState({ anchorEl: null });
+  };
+
   render() {
     return (
       <Drawer
@@ -86,6 +105,26 @@ class Section extends Component {
             <p>۶ قدم</p>
             <p>ceo@6ghadam.com</p>
           </div>
+
+          <Button
+            aria-haspopup='true'
+            onClick={this.openMenu}
+            aria-owns={this.state.anchorEl ? 'simple-menu' : null}
+            className={this.props.classes.arrowDown}
+          >
+            <KeyboardArrowDown />
+          </Button>
+
+
+          <Menu
+            onClose={this.closeMenu}
+            anchorEl={this.state.anchorEl}
+            open={Boolean(this.state.anchorEl)}
+          >
+            <MenuItem onClick={this.closeMenu}>پروفایل</MenuItem>
+            <MenuItem onClick={this.closeMenu}>زبان ها</MenuItem>
+            <MenuItem onClick={this.closeMenu}>خروج</MenuItem>
+          </Menu>
         </div>
 
         <List className={this.props.classes.mainMenu}>منو اصلی</List>
