@@ -1,30 +1,18 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
+import { Route, Switch } from 'react-router-dom';
 
-import Tabs from './Tabs';
-import AppBar from './AppBar';
-import Section from './Section';
+import Panel from './Panel';
+import NotFound from './NotFound';
 
-const styles = {
-  root: {
-    flexGrow: 1,
-    zIndex: 1,
-    overflow: 'hidden',
-    position: 'relative',
-    display: 'flex',
-  },
-};
-
-class Client extends Component {
+class Components extends Component {
   render() {
     return (
-      <div className={this.props.classes.root}>
-        <AppBar />
-        <Section />
-        <Tabs />
-      </div>
+      <Switch>
+        <Route path='/panel' component={Panel} />
+        <Route component={NotFound} />
+      </Switch>
     );
   }
 }
 
-export default withStyles(styles)(Client);
+export default Components;

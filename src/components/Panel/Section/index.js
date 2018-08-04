@@ -6,7 +6,9 @@ import Avatar from '@material-ui/core/Avatar';
 import HomeIcon from '@material-ui/icons/Home';
 import Divider from '@material-ui/core/Divider';
 import MenuItem from '@material-ui/core/MenuItem';
-import React, { Component, Fragment } from 'react';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -40,15 +42,21 @@ const styles = theme => ({
     width: 300,
     position: 'relative',
   },
+  link: {
+    textDecoration: 'none',
+    color: theme.palette.common.black,
+  },
 });
 
 function Link(props) {
   return (
-    <NavLink to={props.to}>
-      <List className={props.classes.list}>
+    <NavLink to={props.to} className={props.classes.link}>
+      <ListItem className={props.classes.list} button>
         <HomeIcon className={props.classes.icon} />
-        <span className={props.classes.span}>{props.children}</span>
-      </List>
+        <ListItemText className={props.classes.span}>
+          {props.children}
+        </ListItemText>
+      </ListItem>
       <Divider />
     </NavLink>
   );
@@ -82,29 +90,31 @@ class Section extends Component {
 
         <List className={this.props.classes.mainMenu}>منو اصلی</List>
 
-        <CustomLink to='/panel/manage-data'>
-          پنل مدیریت داده های آماری
-        </CustomLink>
+        <List>
+          <CustomLink to='/panel/manage-data'>
+            پنل مدیریت داده های آماری
+          </CustomLink>
 
-        <CustomLink to='/panel/system-control'>
-          پنل کنترلی سیستم
-        </CustomLink>
+          <CustomLink to='/panel/system-control'>
+            پنل کنترلی سیستم
+          </CustomLink>
 
-        <CustomLink to='/panel/prediction-control'>
-          پنل کنترلی پیش بینی ها
-        </CustomLink>
+          <CustomLink to='/panel/prediction-control'>
+            پنل کنترلی پیش بینی ها
+          </CustomLink>
 
-        <CustomLink to='/panel/accurate-prediction-control'>
-          پنل کنترل پیش بینی های دقیق
-        </CustomLink>
+          <CustomLink to='/panel/accurate-prediction-control'>
+            پنل کنترل پیش بینی های دقیق
+          </CustomLink>
 
-        <CustomLink to='/panel/manage-transaction'>
-          پنل مدیریت تراکنش های مالی ثبت شده
-        </CustomLink>
+          <CustomLink to='/panel/manage-transaction'>
+            پنل مدیریت تراکنش های مالی ثبت شده
+          </CustomLink>
 
-        <CustomLink to='/panel/manage-winners'>
-          پنل مدیریت برندگان و جوایز
-        </CustomLink>
+          <CustomLink to='/panel/manage-winners'>
+            پنل مدیریت برندگان و جوایز
+          </CustomLink>
+        </List>
 
         <p>سیستم پیش بینی مسابقات ورزشی ۶ قدم</p>
         <p>Ver. 1.5.0.0</p>
