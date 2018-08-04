@@ -12,6 +12,8 @@ import ListItem from '@material-ui/core/ListItem';
 import { withStyles } from '@material-ui/core/styles';
 import ListItemText from '@material-ui/core/ListItemText';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
+import green from '@material-ui/core/colors/green';
+import grey from '@material-ui/core/colors/grey';
 
 const styles = theme => ({
   list: {
@@ -35,17 +37,19 @@ const styles = theme => ({
   toolbar: theme.mixins.toolbar,
   user: {
     display: 'flex',
+    backgroundColor: green[100],
   },
   userInfo: {
     marginTop: 18,
   },
   mainMenu: {
-    margin: 5,
-    marginLeft: 15,
+    padding: 5,
+    paddingLeft: 15,
     fontWeight: 600,
+    backgroundColor: grey[200],
   },
   arrowDown: {
-    marginTop: 40,
+    marginTop: 35,
     marginLeft: 10,
     cursor: 'pointer',
   },
