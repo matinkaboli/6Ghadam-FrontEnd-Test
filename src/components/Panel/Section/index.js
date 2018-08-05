@@ -7,13 +7,15 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import HomeIcon from '@material-ui/icons/Home';
 import Divider from '@material-ui/core/Divider';
+import grey from '@material-ui/core/colors/grey';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItem from '@material-ui/core/ListItem';
+import green from '@material-ui/core/colors/green';
 import { withStyles } from '@material-ui/core/styles';
 import ListItemText from '@material-ui/core/ListItemText';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
-import green from '@material-ui/core/colors/green';
-import grey from '@material-ui/core/colors/grey';
+import Favorite from '@material-ui/icons/Favorite';
 
 const styles = theme => ({
   list: {
@@ -40,6 +42,8 @@ const styles = theme => ({
   },
   user: {
     display: 'flex',
+    alignItems: 'center',
+    alignContent: 'center',
     backgroundColor: green[100],
   },
   version: {
@@ -47,7 +51,7 @@ const styles = theme => ({
   },
   toolbar: theme.mixins.toolbar,
   userInfo: {
-    marginTop: 18,
+    fontSize: 14,
   },
   homePage: {
     color: green[800],
@@ -59,9 +63,12 @@ const styles = theme => ({
     backgroundColor: grey[200],
   },
   arrowDown: {
-    marginTop: 35,
+    marginTop: 15,
     marginLeft: 10,
     cursor: 'pointer',
+  },
+  activeLink: {
+    color: green[500],
   },
   drawerPaper: {
     width: 300,
@@ -71,7 +78,10 @@ const styles = theme => ({
 
 function Link(props) {
   return (
-    <NavLink to={props.to} className={props.classes.link}>
+    <NavLink
+      to={props.to}
+      className={props.classes.link}
+      activeClassName={props.classes.activeLink}>
       <ListItem className={props.classes.list} button>
         <HomeIcon className={props.classes.icon} />
         <ListItemText className={props.classes.span}>
@@ -89,6 +99,10 @@ class Section extends Component {
   state = {
     anchorEl: null,
   };
+
+  shouldComponentUpdate() {
+    return true;
+  }
 
   openMenu = e => {
     this.setState({ anchorEl: e.currentTarget });
@@ -135,9 +149,20 @@ class Section extends Component {
             anchorEl={this.state.anchorEl}
             open={Boolean(this.state.anchorEl)}
           >
-            <MenuItem onClick={this.closeMenu}>پروفایل</MenuItem>
-            <MenuItem onClick={this.closeMenu}>زبان ها</MenuItem>
-            <MenuItem onClick={this.closeMenu}>خروج</MenuItem>
+            <MenuItem onClick={this.closeMenu}>
+              <AccountCircle />
+              پروفایل
+            </MenuItem>
+
+            <MenuItem onClick={this.closeMenu}>
+              <Favorite />
+              زبان ها
+            </MenuItem>
+
+            <MenuItem onClick={this.closeMenu}>
+              <Favorite />
+              خروج
+            </MenuItem>
           </Menu>
         </div>
 
