@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
 import Table from 'Root/configs/Table';
+import React, { Component } from 'react';
+import Autocomplete from 'Root/configs/Autocomplete';
 
 const head = [
   'شماره تخمین',
@@ -17,10 +18,33 @@ const body = [
   [1, 2, 3, 4, 5, 6],
 ];
 
+const options = [
+  'متین',
+  'علی',
+  'معین',
+  'امیر',
+];
+
 class FurtherInfo extends Component {
+  state = {
+    select: '',
+  }
+
+  handleChange = value => {
+    this.setState({ select: value });
+  };
+
   render() {
     return (
-      <Table head={head} body={body} />
+      <div>
+        <Autocomplete
+          options={options}
+          value={this.state.select}
+          handleChange={this.handleChange}
+          placeholder='یک پیش بینی را انتخاب کنید'
+        />
+        <Table head={head} body={body} />
+      </div>
     );
   }
 }

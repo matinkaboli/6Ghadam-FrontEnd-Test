@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Table from '@material-ui/core/Table';
 import Paper from '@material-ui/core/Paper';
 import TableRow from '@material-ui/core/TableRow';
@@ -24,31 +24,25 @@ const styles = {
   },
 };
 
-class TableConfig extends Component {
-  render() {
-    return (
-      <Paper className={this.props.classes.root}>
-        <Table>
-          <TableHead>
-            <TableRow>
-              {this.props.head.map((v, i) =>
-                <CustomTableCell key={i}>{v}</CustomTableCell>
-              )}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.props.body.map((v, i) =>
-              <TableRow key={i}>
-                {v.map(cell =>
-                  <TableCell>{cell}</TableCell>
-                )}
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
-      </Paper>
-    );
-  }
-}
+const TableConfig = props => <Paper className={props.classes.root}>
+  <Table>
+    <TableHead>
+      <TableRow>
+        {props.head.map((v, i) =>
+          <CustomTableCell key={i}>{v}</CustomTableCell>
+        )}
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {props.body.map((v, i) =>
+        <TableRow key={i}>
+          {v.map((cellValue, cellKey) =>
+            <TableCell key={cellKey}>{cellValue}</TableCell>
+          )}
+        </TableRow>
+      )}
+    </TableBody>
+  </Table>
+</Paper>;
 
 export default withStyles(styles)(TableConfig);
