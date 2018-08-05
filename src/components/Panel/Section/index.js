@@ -178,7 +178,7 @@ class Section extends Component {
           </CustomLink>
 
           <CustomLink to='/panel/prediction-control'>
-            پنل کنترلی پیش بینی ها
+            پنل کنترل پیش بینی ها
           </CustomLink>
 
           <CustomLink to='/panel/accurate-prediction-control'>
