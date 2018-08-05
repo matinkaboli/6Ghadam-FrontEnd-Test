@@ -42,6 +42,7 @@
   "dependencies": {
     "@material-ui/core": "^1.4.2",
     "@material-ui/icons": "^2.0.0",
+    "chart.js": "^2.7.2",
     "jss": "^9.8.7",
     "jss-rtl": "^0.2.3",
     "react-jss": "^8.6.1"
