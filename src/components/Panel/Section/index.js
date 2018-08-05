@@ -10,12 +10,12 @@ import Divider from '@material-ui/core/Divider';
 import grey from '@material-ui/core/colors/grey';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItem from '@material-ui/core/ListItem';
+import Favorite from '@material-ui/icons/Favorite';
 import green from '@material-ui/core/colors/green';
 import { withStyles } from '@material-ui/core/styles';
 import ListItemText from '@material-ui/core/ListItemText';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown';
-import Favorite from '@material-ui/icons/Favorite';
 
 const styles = theme => ({
   list: {
