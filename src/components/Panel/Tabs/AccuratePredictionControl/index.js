@@ -3,7 +3,12 @@ import React, { Component } from 'react';
 import Tabs from '@material-ui/core/Tabs';
 import AppBar from '@material-ui/core/AppBar';
 import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
+
+import Update from './Update';
+import DataSurvey from './DataSurvey';
+import FurtherInfo from './FurtherInfo';
+import NewAccuratePrediction from './NewAccuratePrediction';
+import ManageAccuratePredictions from './ManageAccuratePredictions';
 
 const styles = theme => ({
   root: {
@@ -13,14 +18,6 @@ const styles = theme => ({
     backgroundColor: theme.palette.common.primary,
   },
 });
-
-function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
-}
 
 class AllTabs extends Component {
   state = {
@@ -44,11 +41,11 @@ class AllTabs extends Component {
           </Tabs>
         </AppBar>
 
-        {this.state.value === 0 && <TabContainer>Item One</TabContainer>}
-        {this.state.value === 1 && <TabContainer>Item Two</TabContainer>}
-        {this.state.value === 2 && <TabContainer>Item Three</TabContainer>}
-        {this.state.value === 3 && <TabContainer>Item Three</TabContainer>}
-        {this.state.value === 4 && <TabContainer>Item Three</TabContainer>}
+        {this.state.value === 0 && <DataSurvey />}
+        {this.state.value === 1 && <ManageAccuratePredictions />}
+        {this.state.value === 2 && <NewAccuratePrediction />}
+        {this.state.value === 3 && <Update />}
+        {this.state.value === 4 && <FurtherInfo />}
       </div>
     );
   }

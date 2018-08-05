@@ -27,6 +27,10 @@ const styles = theme => ({
   icon: {
     marginLeft: 5,
   },
+  info: {
+    fontSize: 14,
+    textAlign: 'center',
+  },
   link: {
     textDecoration: 'none',
     color: theme.palette.common.black,
@@ -34,13 +38,19 @@ const styles = theme => ({
   avatar: {
     margin: 20,
   },
-  toolbar: theme.mixins.toolbar,
   user: {
     display: 'flex',
     backgroundColor: green[100],
   },
+  version: {
+    fontSize: 12,
+  },
+  toolbar: theme.mixins.toolbar,
   userInfo: {
     marginTop: 18,
+  },
+  homePage: {
+    color: green[800],
   },
   mainMenu: {
     padding: 5,
@@ -159,8 +169,13 @@ class Section extends Component {
           </CustomLink>
         </List>
 
-        <p>سیستم پیش بینی مسابقات ورزشی ۶ قدم</p>
-        <p>Ver. 1.5.0.0</p>
+        <div className={this.props.classes.info}>
+          <p className={this.props.classes.homePage}>
+            سیستم پیش بینی مسابقات ورزشی ۶ قدم
+          </p>
+
+          <p className={this.props.classes.version}>Ver. 1.5.0.0</p>
+        </div>
       </Drawer>
     );
   }
