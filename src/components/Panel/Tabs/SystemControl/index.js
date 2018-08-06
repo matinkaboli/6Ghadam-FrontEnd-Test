@@ -1,24 +1,17 @@
 import React from 'react';
-import red from '@material-ui/core/colors/red';
-import { withStyles } from '@material-ui/core/styles';
+import Tab from 'Root/configs/Tab';
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    padding: 15,
-    width: '100%',
-    color: red[500],
-    marginTop: theme.spacing.unit * 8.3,
-    backgroundColor: theme.palette.common.primary,
- },
-});
+import CreateLeague from './CreateLeague';
+import DeleteLeague from './DeleteLeague';
+import UpdateLeague from './UpdateLeague';
 
-function SystemControl(props) {
-  return (
-    <div className={props.classes.root}>
-      <p>خالی!</p>
-    </div>
-  );
-}
+const tabs = [
+  { label: 'ساخت لیگ', Comp: CreateLeague },
+  { label: 'حذف لیگ', Comp: DeleteLeague },
+  { label: 'به روز رسانی لیگ', Comp: UpdateLeague },
+];
 
-export default withStyles(styles)(SystemControl);
+export default () =>
+  <div style={{ width: '100%' }}>
+    <Tab tabs={tabs} />
+  </div>;
