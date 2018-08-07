@@ -56,7 +56,7 @@ class DeleteLeague extends Component {
         }
       ).then(res => res.json());
 
-    if (data.id) {
+    if (data.count) {
       this.setState({
         id: '',
         showSnackbar: true,

@@ -10,7 +10,7 @@ const tabs = [
   { label: 'ساخت لیگ', Comp: CreateLeague },
   { label: 'حذف لیگ', Comp: DeleteLeague },
   { label: 'به روز رسانی لیگ', Comp: UpdateLeague },
-  { label: 'لیگ ها', Comp: ReadLeague },
+  { label: 'جست و جوی لیگ ها', Comp: ReadLeague },
 ];
 
 export default () =>
