@@ -116,8 +116,8 @@ class ReadLeague extends Component {
       <div className={this.props.classes.root}>
         <Snackbar
           open={this.state.showSnackbar}
-          message={this.state.snackbarMessage}
           onClose={this.handleCloseSnackbar}
+          message={this.state.snackbarMessage}
         />
 
         <form onSubmit={this.handleSubmit} className={this.props.classes.root}>
