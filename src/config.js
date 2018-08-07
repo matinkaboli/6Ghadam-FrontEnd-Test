@@ -1,6 +1,8 @@
 let config = {
   prodCDN: '',
-  devCDN: 'http://localhost:5001/static'
+  devCDN: 'http://localhost:5001/static',
+  serverAAA: 'https://aaa-6ghadam.herokuapp.com/api',
+  serverData: 'https://data-6ghadam.herokuapp.com/api',
 };
 
 if (process.env.NODE_ENV === 'development') {
