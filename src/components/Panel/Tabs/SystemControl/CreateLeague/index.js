@@ -6,7 +6,12 @@ import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
-
+  root: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: 50,
+  }
 };
 
 class CreateLeague extends Component {
@@ -105,6 +110,7 @@ class CreateLeague extends Component {
           />
 
           <Button
+            size='small'
             type='submit'
             color='secondary'
             variant='contained'
